@@ -1,0 +1,84 @@
+/* =========================================================
+   モーション（スクロール連動）
+   motion.js が <html class="js-motion"> を付けたときだけ初期状態を隠す
+   ＝JSが動かない環境では全要素がそのまま表示される
+   ========================================================= */
+:root {
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --ease-mask: cubic-bezier(.77, 0, .18, 1);
+}
+
+.m-init [data-m], .m-init [data-m] *, .m-init .concept__bg, .m-init .concept__text { transition: none !important; }
+
+/* ---------- フェードアップ ---------- */
+.js-motion [data-m="fade"] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 1.2s ease, transform 1.4s var(--ease-out);
+  transition-delay: var(--d, 0s);
+}
+.js-motion [data-m="fade"].is-in { opacity: 1; transform: none; }
+
+/* ---------- 1文字ずつ（縦書き見出し・コンセプト） ---------- */
+.m-char { display: inline; }
+.js-motion [data-m="split"] .m-char {
+  opacity: 0;
+  filter: blur(6px);
+  transition: opacity 1.1s ease, filter 1.1s ease;
+  transition-delay: calc(var(--d, 0s) + var(--i) * 90ms);
+}
+.js-motion [data-m="split"].is-in .m-char { opacity: 1; filter: none; }
+
+/* ---------- 画像：マスク展開＋ゆっくり引き ---------- */
+.js-motion [data-m="mask"] {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.5s var(--ease-mask);
+  transition-delay: var(--d, 0s);
+}
+.js-motion [data-m="mask"][data-dir="r"] { clip-path: inset(0 0 0 100%); }
+.js-motion [data-m="mask"] img,
+.js-motion [data-m="mask"] iframe {
+  transform: scale(1.14);
+  transition: transform 2.6s var(--ease-out);
+  transition-delay: var(--d, 0s);
+}
+.js-motion [data-m="mask"].is-in { clip-path: inset(0 0 0 0); }
+.js-motion [data-m="mask"].is-in img,
+.js-motion [data-m="mask"].is-in iframe { transform: none; }
+
+/* ---------- コンセプト背景：ゆっくりズームアウト ---------- */
+.concept, .webp .concept { overflow: hidden; background: #3d5a3a; }
+.concept__bg {
+  position: absolute; inset: 0; z-index: 0;
+  background: url("../img/concept.jpg") center / cover no-repeat;
+}
+.webp .concept__bg { background-image: url("../img/concept.webp"); }
+.concept__inner { z-index: 2; }
+.js-motion .concept__bg { transform: scale(1.1); transition: transform 5s var(--ease-out); }
+.js-motion .concept.is-in .concept__bg { transform: none; }
+.js-motion .concept__text { opacity: 0; transform: translateY(28px); transition: opacity 1.4s ease 1.4s, transform 1.6s var(--ease-out) 1.4s; }
+.js-motion .concept.is-in .concept__text { opacity: 1; transform: none; }
+@media (max-width: 767px) {
+  .concept::before { z-index: 1; }
+  .concept__bg { background-position: 30% center; }
+}
+
+/* ---------- ホバー ---------- */
+.card__img, .spot__img, .zigzag__img, .about__img { overflow: hidden; }
+.card__img img { transition: transform .8s var(--ease-out); }
+.card:hover .card__img img { transform: scale(1.05); }
+.btn { position: relative; overflow: hidden; isolation: isolate; }
+.btn::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: rgba(255,255,255,.14);
+  transform: translateX(-101%); transition: transform .5s var(--ease-out);
+}
+.btn:hover::before { transform: none; }
+
+
+@media (prefers-reduced-motion: reduce) {
+  .js-motion [data-m] , .js-motion [data-m] *, .js-motion .concept__bg, .js-motion .concept__text {
+    opacity: 1 !important; transform: none !important; filter: none !important;
+    clip-path: none !important; transition: none !important;
+  }
+}
