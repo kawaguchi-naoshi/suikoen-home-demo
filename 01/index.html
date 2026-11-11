@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>寸又峡温泉 翠紅苑｜秘境に、本格旅館がある。</title>
+<meta name="description" content="南アルプスの麓、寸又峡温泉の一軒宿「翠紅苑」。夢のつり橋まで徒歩約15分。「美女づくりの湯」と地産の食材を活かした和会席料理で、何もしない贅沢な時間をお過ごしください。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+<script>
+  /* 背景画像のWebP出し分け用：対応ブラウザは <html class="webp"> */
+  (function(){try{var c=document.createElement('canvas');c.width=c.height=1;if(c.toDataURL('image/webp').indexOf('data:image/webp')===0)document.documentElement.classList.add('webp');}catch(e){}})();
+  /* モーション初期状態を描画前に適用（motion.js が読めなければ3秒後に解除） */
+  (function(){var d=document.documentElement;if('IntersectionObserver' in window&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)){d.classList.add('js-motion');setTimeout(function(){if(!window.__motionReady)d.classList.remove('js-motion');},3000);}})();
+</script>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/motion.css">
+<link rel="preload" as="image" href="assets/img/hero.webp" type="image/webp">
+</head>
+<body>
+
+<!-- 九曜紋（ロゴマーク） -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="crest" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="9"/>
+    <circle cx="50" cy="50" r="16.5" fill="currentColor"/>
+    <g fill="currentColor">
+      <circle cx="50" cy="20.5" r="10.2"/><circle cx="70.9" cy="29.1" r="10.2"/>
+      <circle cx="79.5" cy="50" r="10.2"/><circle cx="70.9" cy="70.9" r="10.2"/>
+      <circle cx="50" cy="79.5" r="10.2"/><circle cx="29.1" cy="70.9" r="10.2"/>
+      <circle cx="20.5" cy="50" r="10.2"/><circle cx="29.1" cy="29.1" r="10.2"/>
+    </g>
+  </symbol>
+</svg>
+
+<!-- ============ ヘッダー ============ -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="/">
+      <svg class="logo__mark" aria-hidden="true"><use href="#crest"/></svg>
+      <span class="logo__text">
+        <span class="logo__sub">寸又峡温泉</span>
+        <img class="logo__type" src="assets/img/logotype.png" alt="翠紅苑" width="171" height="53">
+      </span>
+    </a>
+    <div class="header-actions">
+      <a class="btn-head btn-head--dark" href="#booking">空室検索</a>
+      <!-- 翻訳：shutto翻訳の言語切替に差し替え -->
+      <button class="btn-head btn-head--light" type="button">日本語</button>
+    </div>
+    <nav class="gnav" id="gnav" aria-label="グローバルナビゲーション">
+      <ul>
+        <li><a href="/sightseeing/">観光</a></li>
+        <li><a href="#stay">過ごし方</a></li>
+        <li><a href="/cuisine/">料理</a></li>
+        <li><a href="/onsen/">温泉</a></li>
+        <li><a href="/rooms/">客室</a></li>
+        <li><a href="#access">アクセス</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" type="button" aria-controls="gnav" aria-expanded="false" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ ヒーロー ============ -->
+<!-- ※TOPは動画予定：動画完成後は .hero__media に <video autoplay muted loop playsinline poster="assets/img/hero.jpg"> を追加 -->
+<section class="hero">
+  <div class="hero__media">
+    <picture>
+      <source srcset="assets/img/hero.webp" type="image/webp">
+      <img src="assets/img/hero.jpg" alt="エメラルドグリーンの湖面に架かる夢のつり橋" width="3200" height="1358">
+    </picture>
+  </div>
+  <h1 class="hero__copy tategaki">渓谷の色に、ただ浸る。</h1>
+</section>
+
+<!-- ============ 予約バー ============ -->
+<!-- 予約エンジン（ヤドバンス）の検索URL・パラメータは スペースキー様 確認後に action / name を差し替え -->
+<section class="booking" id="booking" aria-label="空室検索">
+  <div class="container booking__inner">
+    <p class="booking__best">ベストレート保証<br>公式サイトが一番お得です</p>
+    <form class="booking__form" action="https://plan.example.jp/search" method="get">
+      <label class="booking__field">
+        <span>宿泊日</span>
+        <input type="date" name="checkin" id="checkin">
+      </label>
+      <label class="booking__field booking__field--sm">
+        <span>人数</span>
+        <select name="adults">
+          <option value="1">1名様</option>
+          <option value="2" selected>２名様</option>
+          <option value="3">3名様</option>
+          <option value="4">4名様</option>
+          <option value="5">5名様</option>
+          <option value="6">6名様</option>
+        </select>
+      </label>
+      <button class="booking__submit" type="submit">空室検索</button>
+    </form>
+    <ul class="booking__links">
+      <li><a href="#">宿泊プラン一覧</a></li>
+      <li><a href="#">空室カレンダー</a></li>
+      <li><a href="#">予約確認・キャンセル</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 交通情報 ============ -->
+<!-- WordPress化の際は traffic-info カテゴリの投稿から出力。status: ok(緑) / warn(橙) -->
+<section class="traffic" aria-label="交通情報">
+  <div class="container traffic__inner">
+    <h2 class="traffic__title">交通情報</h2>
+    <ul class="traffic__list">
+      <li class="is-ok">道路：通行可</li>
+      <li class="is-warn">工事あり：一部区間で片側交互通行</li>
+      <li class="is-ok">大井川鐵道：通常運行</li>
+      <li class="is-warn">バス代行運転：一部区間で実施中</li>
+      <li class="is-ok">遊歩道：規制なし</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 天気予報 ============ -->
+<section class="weather" aria-labelledby="weather-title">
+  <div class="container">
+    <h2 class="weather__title" id="weather-title">寸又峡温泉 ／ 7日間天気予報</h2>
+    <ol class="weather__list" id="weather-list">
+      <!-- JSで気象庁APIから描画。取得失敗時はこの初期表示が残る -->
+      <li class="weather__day"><span class="w-label">今日</span><span class="w-date">4/2</span><span class="w-icon" data-icon="cloud"></span><span class="w-pop">30%</span><span class="w-temp">16° / 8°</span></li>
+      <li class="weather__day"><span class="w-label">木</span><span class="w-date">4/3</span><span class="w-icon" data-icon="cloud"></span><span class="w-pop">80%</span><span class="w-temp">13° / 9°</span></li>
+      <li class="weather__day"><span class="w-label">金</span><span class="w-date">4/4</span><span class="w-icon" data-icon="rain"></span><span class="w-pop">70%</span><span class="w-temp">12° / 8°</span></li>
+      <li class="weather__day"><span class="w-label">土</span><span class="w-date">4/5</span><span class="w-icon" data-icon="suncloud"></span><span class="w-pop">40%</span><span class="w-temp">15° / 7°</span></li>
+      <li class="weather__day"><span class="w-label">日</span><span class="w-date">4/6</span><span class="w-icon" data-icon="sun"></span><span class="w-pop">10%</span><span class="w-temp">18° / 6°</span></li>
+      <li class="weather__day"><span class="w-label">月</span><span class="w-date">4/7</span><span class="w-icon" data-icon="sun"></span><span class="w-pop">10%</span><span class="w-temp">19° / 7°</span></li>
+      <li class="weather__day"><span class="w-label">火</span><span class="w-date">4/8</span><span class="w-icon" data-icon="suncloud"></span><span class="w-pop">30%</span><span class="w-temp">17° / 8°</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ コンセプト ============ -->
+<section class="concept">
+  <div class="concept__bg" aria-hidden="true"></div>
+  <div class="concept__inner">
+    <h2 class="concept__copy tategaki">秘境に、<br>本格旅館がある。</h2>
+    <div class="concept__text">
+      <p>南アルプスの麓、大井川鐵道の終着駅からほど近く。<br>夢のつり橋を渡れば、目の前にエメラルドグリーンに輝く<br>ダム湖が広がります。<br>翠紅苑は、その渓谷美のすぐそばに<br>昭和三十七年から店を構える一軒宿です。</p>
+      <p>「美女づくりの湯」と呼ばれるとろりとした温泉と、<br>地産の食材を活かした和会席料理。<br>観光で疲れた一日の終わりに、何もしない<br>贅沢な時間をお過ごしください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 寸又峡へ訪れたら／モデルコース ============ -->
+<section class="visit">
+  <div class="container">
+    <header class="sec-head">
+      <h2 class="sec-head__ja">寸又峡へ訪れたら</h2>
+      <p class="sec-head__lead">翠紅苑を拠点に、寸又峡の自然と大井川鐵道を楽しむ1日の過ごし方をご提案します。<br>天気に合わせてお選びください。</p>
+    </header>
+
+    <div class="spots">
+      <article class="spot spot--1">
+        <div class="spot__body">
+          <p class="tag-outline">宿から徒歩約15分</p>
+          <h3 class="spot__title">夢のつり橋</h3>
+          <p class="spot__text">大間ダム湖に架かる吊り橋。エメラルドグリーンの湖面と<br class="pc">渓谷を一望できる、寸又峡随一の景勝地です。</p>
+        </div>
+        <picture class="spot__img">
+          <source srcset="assets/img/spot-tsuribashi.webp" type="image/webp">
+          <img src="assets/img/spot-tsuribashi.jpg" alt="夢のつり橋" width="1200" height="898" loading="lazy">
+        </picture>
+      </article>
+      <article class="spot spot--2">
+        <picture class="spot__img">
+          <source srcset="assets/img/spot-okuoi.webp" type="image/webp">
+          <img src="assets/img/spot-okuoi.jpg" alt="湖に浮かぶ奥大井湖上駅" width="1192" height="898" loading="lazy">
+        </picture>
+        <div class="spot__body">
+          <p class="tag-outline">南アルプスあぷとラインで行く</p>
+          <h3 class="spot__title">奥大井湖上駅</h3>
+          <p class="spot__text">湖に浮かぶ秘境駅として知られる絶景スポット。<br class="pc">大井川鐵道沿線をめぐるモデルコースの目的地にも。</p>
+        </div>
+      </article>
+    </div>
+
+    <header class="sec-head sec-head--en">
+      <h2 class="sec-head__en">MODEL COURSE</h2>
+      <p class="sec-head__lead">翠紅苑を拠点に、寸又峡の自然と大井川鐵道を楽しむ1日の過ごし方をご提案します。天気に合わせてお選びください。</p>
+    </header>
+
+    <div class="courses">
+      <article class="course">
+        <p class="tag-outline tag-outline--icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-sun"><circle cx="12" cy="12" r="5"/><g stroke-width="2" stroke-linecap="round"><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></g></svg>
+          晴れの日モデルコース
+        </p>
+        <h3 class="course__title">夢のつり橋を満喫する半日コース</h3>
+        <dl class="course__list">
+          <div><dt>9:00</dt><dd>翠紅苑を出発、プロムナードを散策</dd></div>
+          <div><dt>9:35</dt><dd>夢のつり橋を渡る・撮影スポットで写真を</dd></div>
+          <div><dt>10:30</dt><dd>飛龍橋まで足を延ばす</dd></div>
+          <div><dt>12:00</dt><dd>翠紅苑に戻って日帰りランチ</dd></div>
+        </dl>
+      </article>
+      <article class="course">
+        <p class="tag-outline tag-outline--icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-umbrella"><path d="M12 2.5C6.5 2.5 2 6.6 2 11.5h20c0-4.9-4.5-9-10-9z"/><path d="M12 11.5v7.5a2 2 0 0 1-4 0" fill="none" stroke-width="2" stroke-linecap="round"/></svg>
+          雨の日モデルコース
+        </p>
+        <h3 class="course__title">大井川鐵道で楽しむ車窓の旅コース</h3>
+        <dl class="course__list">
+          <div><dt>10:00</dt><dd>千頭駅からアプト式列車に乗車</dd></div>
+          <div><dt>10:40</dt><dd>奥大井湖上駅で下車・湖上散策</dd></div>
+          <div><dt>13:00</dt><dd>長島ダムを車窓から眺める</dd></div>
+          <div><dt>15:00</dt><dd>翠紅苑へ戻り、温泉でゆっくり</dd></div>
+        </dl>
+      </article>
+    </div>
+
+    <p class="btn-wrap"><a class="btn" href="/sightseeing/">観光案内ページはこちら</a></p>
+  </div>
+</section>
+
+<!-- ============ Instagram ============ -->
+<!-- ※プラグイン表示：WordPress化の際はInstagramフィード用プラグイン（Smash Balloon等）の出力に差し替え -->
+<section class="insta">
+  <div class="container">
+    <h2 class="insta__title">Instagram</h2>
+    <ul class="insta__grid">
+      <li><a href="https://www.instagram.com/" target="_blank" rel="noopener"><picture><source srcset="assets/img/insta-1.webp" type="image/webp"><img src="assets/img/insta-1.jpg" alt="夢のつり橋" width="552" height="550" loading="lazy"></picture></a></li>
+      <li><a href="https://www.instagram.com/" target="_blank" rel="noopener"><picture><source srcset="assets/img/insta-2.webp" type="image/webp"><img src="assets/img/insta-2.jpg" alt="和会席料理" width="552" height="550" loading="lazy"></picture></a></li>
+      <li><a href="https://www.instagram.com/" target="_blank" rel="noopener"><picture><source srcset="assets/img/insta-3.webp" type="image/webp"><img src="assets/img/insta-3.jpg" alt="露天風呂" width="552" height="550" loading="lazy"></picture></a></li>
+      <li><a href="https://www.instagram.com/" target="_blank" rel="noopener"><picture><source srcset="assets/img/insta-4.webp" type="image/webp"><img src="assets/img/insta-4.jpg" alt="和室" width="552" height="550" loading="lazy"></picture></a></li>
+    </ul>
+    <p class="btn-wrap"><a class="btn btn--insta" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagramをフォロー</a></p>
+  </div>
+</section>
+
+<!-- ============ 翠紅苑の過ごし方 ============ -->
+<section class="stay" id="stay">
+  <h2 class="stay__title tategaki">翠紅苑の過ごし方</h2>
+
+  <article class="zigzag">
+    <picture class="zigzag__img">
+      <source srcset="assets/img/stay-onsen.webp" type="image/webp">
+      <img src="assets/img/stay-onsen.jpg" alt="緑に囲まれた露天風呂" width="1920" height="1214" loading="lazy">
+    </picture>
+    <div class="zigzag__body">
+      <h3 class="zigzag__head"><span>温泉</span></h3>
+      <p class="zigzag__catch">美女づくりの湯</p>
+      <p class="zigzag__text">とろりとした湯ざわりが肌をやさしく包む、寸又峡温泉。<br>男女別の内湯に加え、貸切風呂もご用意しています。<br>観光で歩いた一日の終わりに、ゆっくりと湯につかる時間を。</p>
+      <p><a class="btn" href="/onsen/">料理・温泉をみる</a></p>
+    </div>
+  </article>
+
+  <article class="zigzag zigzag--reverse">
+    <picture class="zigzag__img">
+      <source srcset="assets/img/stay-ryori.webp" type="image/webp">
+      <img src="assets/img/stay-ryori.jpg" alt="鮎の塩焼きと和会席料理" width="1920" height="1170" loading="lazy">
+    </picture>
+    <div class="zigzag__body">
+      <h3 class="zigzag__head"><span>料理</span></h3>
+      <p class="zigzag__catch">山里の恵みを、四季で味わう</p>
+      <p class="zigzag__text">地元・川根の茶や山菜、大井川の鮎など、土地の恵みを生かした<br>和会席料理。季節ごとに表情を変える献立を、落ち着いた個室や<br>食事処でお楽しみいただけます。</p>
+      <p><a class="btn" href="/cuisine/">料理・温泉をみる</a></p>
+    </div>
+  </article>
+
+  <article class="zigzag">
+    <picture class="zigzag__img">
+      <source srcset="assets/img/stay-room.webp" type="image/webp">
+      <img src="assets/img/stay-room.jpg" alt="落ち着いた和室" width="1920" height="1214" loading="lazy">
+    </picture>
+    <div class="zigzag__body">
+      <h3 class="zigzag__head"><span>お部屋</span></h3>
+      <p class="zigzag__catch">昭和37年から続く、懐かしい館内</p>
+      <p class="zigzag__text">開業から大切に手入れを続けてきた、レトロで落ち着いた佇まいの館内。<br>和室を中心に、観光の拠点としても、何もしない静養の場としても<br>くつろげるお部屋をご用意しています。</p>
+      <p><a class="btn" href="/rooms/">お部屋をみる</a></p>
+    </div>
+  </article>
+</section>
+
+<!-- ============ STAY PLAN ============ -->
+<!-- 人気プランはWordPressカスタムフィールドで更新予定 -->
+<section class="plans plans--stay">
+  <div class="container">
+    <h2 class="plans__title">STAY PLAN</h2>
+    <div class="cards">
+      <article class="card">
+        <picture class="card__img"><source srcset="assets/img/plan-1.webp" type="image/webp"><img src="assets/img/plan-1.jpg" alt="スタンダードプランの料理" width="760" height="600" loading="lazy"></picture>
+        <div class="card__body">
+          <p class="card__price">基本宿泊費：￥11,000 ～</p>
+          <h3 class="card__title">スタンダードプラン</h3>
+          <p class="card__text">『寸又峡で過ごす癒しの休日』静岡の奥座敷で何もしない贅沢を味わう≪2食付き≫</p>
+          <p class="card__btn"><a class="btn btn--sm" href="#">プラン詳細はこちら</a></p>
+        </div>
+      </article>
+      <article class="card">
+        <picture class="card__img"><source srcset="assets/img/plan-2.webp" type="image/webp"><img src="assets/img/plan-2.jpg" alt="炭火焼き料理プランの料理" width="760" height="600" loading="lazy"></picture>
+        <div class="card__body">
+          <p class="card__price">基本宿泊費：￥15,400 ～</p>
+          <h3 class="card__title">炭火焼き料理プラン</h3>
+          <p class="card__text">『囲炉裏であぶった、地産の旬の味覚に舌鼓！』レトロな雰囲気の囲炉裏で食事を楽しむ</p>
+          <p class="card__btn"><a class="btn btn--sm" href="#">プラン詳細はこちら</a></p>
+        </div>
+      </article>
+      <article class="card">
+        <picture class="card__img"><source srcset="assets/img/plan-3.webp" type="image/webp"><img src="assets/img/plan-3.jpg" alt="九曜紋コースの和会席料理" width="760" height="600" loading="lazy"></picture>
+        <div class="card__body">
+          <p class="card__price">基本宿泊費：￥15,400 ～</p>
+          <h3 class="card__title">スタンダードプラン<br>［九曜紋コース］</h3>
+          <p class="card__text">『厳選した素材を使ったワンランク上の和会席料理』</p>
+          <p class="card__btn"><a class="btn btn--sm" href="#">プラン詳細はこちら</a></p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAY USE ============ -->
+<section class="plans plans--day">
+  <div class="container">
+    <h2 class="plans__title">DAY USE</h2>
+    <div class="cards">
+      <article class="card">
+        <picture class="card__img"><source srcset="assets/img/dayuse-1.webp" type="image/webp"><img src="assets/img/dayuse-1.jpg" alt="露天風呂" width="760" height="600" loading="lazy"></picture>
+        <div class="card__body">
+          <h3 class="card__title">日帰り入浴</h3>
+          <p class="card__text">タオル付きで、観光の合間にふらりとお立ち寄りいただけます。「美女づくりの湯」を手軽に体験。</p>
+          <p class="card__price">600円〜</p>
+          <p class="card__btn"><a class="btn btn--sm" href="#">プラン詳細はこちら</a></p>
+        </div>
+      </article>
+      <article class="card">
+        <picture class="card__img"><source srcset="assets/img/dayuse-2.webp" type="image/webp"><img src="assets/img/dayuse-2.jpg" alt="日帰りランチ" width="760" height="600" loading="lazy"></picture>
+        <div class="card__body">
+          <h3 class="card__title">日帰りランチ</h3>
+          <p class="card__text">地産の食材を使ったランチメニュー。11:30〜13:30(13:00 L.O.)。予約不要でお気軽にどうぞ。</p>
+          <p class="card__price">要確認</p>
+          <p class="card__btn"><a class="btn btn--sm" href="#">プラン詳細はこちら</a></p>
+        </div>
+      </article>
+      <article class="card">
+        <picture class="card__img"><source srcset="assets/img/dayuse-3.webp" type="image/webp"><img src="assets/img/dayuse-3.jpg" alt="松花堂弁当" width="760" height="600" loading="lazy"></picture>
+        <div class="card__body">
+          <h3 class="card__title">ランチ＋入浴セット</h3>
+          <p class="card__text">オリジナルの松花堂弁当と秘境の美肌温泉をセットで。寸又峡観光を満喫したあとのご褒美に。</p>
+          <p class="card__price">2,500円〜</p>
+          <p class="card__btn"><a class="btn btn--sm" href="#">プラン詳細はこちら</a></p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 翠紅苑について ============ -->
+<section class="about">
+  <div class="container about__inner">
+    <svg class="about__crest" aria-hidden="true"><use href="#crest"/></svg>
+    <div class="about__body">
+      <h2 class="about__title">寸又峡温泉<br>翠紅苑について</h2>
+      <p class="about__text">昭和37年の開業以来、寸又峡の渓谷とともに歩んできた一軒宿です。</p>
+      <ul class="about__links">
+        <li><a href="/faq/">よくあるご質問</a></li>
+        <li><a href="/news/">お知らせ</a></li>
+        <li><a href="/policy/">宿泊規約・プライバシーポリシー</a></li>
+      </ul>
+    </div>
+    <picture class="about__img">
+      <source srcset="assets/img/about.webp" type="image/webp">
+      <img src="assets/img/about.jpg" alt="夜の翠紅苑 外観" width="1000" height="666" loading="lazy">
+    </picture>
+  </div>
+</section>
+
+<!-- ============ お知らせ ============ -->
+<section class="news">
+  <div class="container">
+    <h2 class="news__title tategaki">お知らせ</h2>
+    <ul class="news__list">
+      <li><a href="#"><time datetime="2026-02-28">2026.02.28</time><span class="news__cat">お知らせ</span><span class="news__ttl">「寸又渓谷保全協力金」について</span></a></li>
+      <li><a href="#"><time datetime="2026-02-28">2026.02.28</time><span class="news__cat">交通案内</span><span class="news__ttl">夢のつり橋に向かう方へ｜寸又峡プロムナードコース(遊歩道)通行可能時間帯のご案内</span></a></li>
+      <li><a href="#"><time datetime="2026-01-15">2026.01.15</time><span class="news__cat">プラン</span><span class="news__ttl">星空列車の特別宿泊プラン、受付を開始しました</span></a></li>
+    </ul>
+    <p class="btn-wrap"><a class="btn" href="/news/">お知らせ一覧を見る</a></p>
+  </div>
+</section>
+
+<!-- ============ アクセス ============ -->
+<section class="access" id="access">
+  <div class="container">
+    <!-- Googleストリートビュー：Googleマップ「共有 → 地図を埋め込む」で取得したiframeに差し替え（現在はデザイン通りの静止画） -->
+    <div class="access__street">
+      <a href="https://www.google.com/maps/search/?api=1&query=%E5%AF%B8%E5%8F%88%E5%B3%A1%E6%B8%A9%E6%B3%89+%E7%BF%A0%E7%B4%85%E8%8B%91" target="_blank" rel="noopener">
+        <picture><source srcset="assets/img/streetview.webp" type="image/webp"><img src="assets/img/streetview.jpg" alt="翠紅苑 玄関（ストリートビュー）" width="2406" height="1178" loading="lazy"></picture>
+      </a>
+    </div>
+    <div class="access__row">
+      <div class="access__map">
+        <iframe src="https://maps.google.com/maps?q=%E5%AF%B8%E5%8F%88%E5%B3%A1%E6%B8%A9%E6%B3%89%20%E7%BF%A0%E7%B4%85%E8%8B%91&z=13&output=embed" title="翠紅苑の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="access__info">
+        <h2 class="access__title">ACCESS</h2>
+        <dl class="access__list">
+          <div><dt>お車</dt><dd>新静岡ICから約100分</dd></div>
+          <div><dt>電車</dt><dd>大井川鐵道 千頭駅よりバス約60分</dd></div>
+          <div><dt>バス</dt><dd>千頭駅前から「寸又峡温泉」行き</dd></div>
+          <div><dt>詳細</dt><dd><a href="/sightseeing/#access">周辺・観光ページで見る ＞</a></dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ フッター ============ -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <p class="f-logo">
+      <span class="f-logo__sub">寸又峡温泉</span>
+      <span class="f-logo__main">
+        <svg class="f-logo__mark" aria-hidden="true"><use href="#crest"/></svg>
+        <img src="assets/img/logotype.png" alt="翠紅苑" width="204" height="64">
+      </span>
+    </p>
+    <address class="f-info">
+      TEL：<a href="tel:0547593100">0547-59-3100</a> (8:00～20:30)<br>
+      FAX：0547-59-3105<br>
+      静岡県榛原郡川根本町寸又峡
+    </address>
+    <p class="btn-wrap"><a class="btn" href="#">宿泊プラン一覧はこちら</a></p>
+    <ul class="f-nav">
+      <li><a href="/sightseeing/">観光</a></li>
+      <li><a href="#stay">過ごし方</a></li>
+      <li><a href="/cuisine/">料理</a></li>
+      <li><a href="/onsen/">温泉</a></li>
+      <li><a href="/rooms/">客室</a></li>
+      <li><a href="#access">アクセス</a></li>
+    </ul>
+  </div>
+  <p class="copyright"><small>© 寸又峡温泉 翠紅苑</small></p>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/motion.js" defer></script>
+</body>
+</html>
