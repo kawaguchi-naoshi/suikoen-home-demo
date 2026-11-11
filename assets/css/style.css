@@ -84,18 +84,24 @@ button, input, select { font: inherit; color: inherit; }
 .logo__sub { font-size: 18px; font-weight: 700; line-height: 1.2; letter-spacing: .02em; margin-bottom: 1px; }
 .logo__type { width: 171px; height: auto; }
 
-.header-actions { position: absolute; right: 20px; top: 16px; display: flex; gap: 20px; }
-.btn-head {
+.header-actions { position: absolute; right: 20px; top: 23px; display: flex; align-items: center; gap: 31px; }
+.lang-btn {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 6px 0; border: 0; background: none; color: #fff; cursor: pointer;
+  font-size: 16px; font-weight: 700; letter-spacing: .02em; line-height: 1;
+}
+.lang-btn__icon { width: 22px; height: 22px; }
+.lang-btn__arrow { font-size: 12px; margin-left: 4px; }
+.lang-btn:hover .lang-btn__label { text-decoration: underline; text-underline-offset: 4px; }
+.btn-plan {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 124px; height: 37px; border: 0; cursor: pointer;
-  font-size: 16px; font-weight: 700; letter-spacing: .02em;
+  width: 247px; height: 57px; background: #fff; color: var(--ink);
+  font-size: 23px; font-weight: 700; letter-spacing: .04em;
   transition: opacity .2s;
 }
-.btn-head:hover { opacity: .85; }
-.btn-head--dark { background: var(--black); color: #fff; }
-.btn-head--light { background: #fff; color: var(--ink); }
+.btn-plan:hover { opacity: .85; }
 
-.gnav { position: absolute; right: 20px; top: 66px; }
+.gnav { position: absolute; left: 343px; top: 44px; }
 .gnav ul { display: flex; gap: 32px; }
 .gnav a { font-size: 16px; font-weight: 700; line-height: 1.4; letter-spacing: 0; position: relative; }
 .gnav a::after {
@@ -104,6 +110,7 @@ button, input, select { font: inherit; color: inherit; }
 }
 .gnav a:hover::after { transform: scaleX(1); }
 .menu-toggle { display: none; }
+.gnav__plan { display: none; }
 
 /* =========================================================
    ヒーロー
@@ -186,22 +193,25 @@ button, input, select { font: inherit; color: inherit; }
    コンセプト
    ========================================================= */
 .concept {
-  position: relative; height: 1000px; color: #fff;
+  position: relative; height: 610px; color: #fff;
   background: #3d5a3a url("../img/concept.jpg") center / cover no-repeat;
 }
 .webp .concept { background-image: url("../img/concept.webp"); }
 .concept__inner { position: relative; height: 100%; max-width: 1920px; margin: 0 auto; }
+.concept__body {
+  position: absolute; top: 49px; right: calc(50% - 602px);
+  display: flex; flex-direction: row-reverse; align-items: flex-start; gap: 77px;
+}
 .concept__copy {
-  position: absolute; top: 129px; left: calc(50% + 239px);
-  font-size: 48px; font-weight: 700; line-height: 75px; letter-spacing: 9.6px;
+  font-size: 48px; font-weight: 700; line-height: 60px; letter-spacing: 10px;
   text-shadow: 0 0 20px rgba(0,0,0,.4), 0 0 4px rgba(0,0,0,.25);
 }
 .concept__text {
-  position: absolute; top: 595px; left: calc(50% + 67px);
-  font-size: 17px; line-height: 30px; letter-spacing: .08em;
+  writing-mode: vertical-rl; margin-top: 6px;
+  font-size: 17px; line-height: 30px; letter-spacing: 3.4px;
   text-shadow: 0 0 10px rgba(0,0,0,.6), 0 0 3px rgba(0,0,0,.45);
 }
-.concept__text p + p { margin-top: 30px; }
+.concept__text p + p { margin-block-start: 30px; }
 
 /* =========================================================
    寸又峡へ訪れたら／モデルコース
@@ -231,7 +241,8 @@ button, input, select { font: inherit; color: inherit; }
 .spot__body::after { /* 写真に掛かる細線 */
   content: ""; position: absolute; bottom: 45px; height: 1px; background: var(--ink); z-index: 3;
 }
-.spot--1 .spot__img { margin-left: -40px; z-index: 2; }
+.spot--1 .spot__img { margin-left: -40px; z-index: 1; }
+.spot--1 .spot__body { z-index: 2; }
 .spot--1 .spot__body::after { right: -40px; width: 84px; }
 .spot--2 { margin-top: -80px; }
 .spot--2 .spot__img { margin-top: 80px; margin-left: 4px; width: calc(50% - 4px); }
@@ -298,9 +309,11 @@ button, input, select { font: inherit; color: inherit; }
    STAY PLAN / DAY USE
    ========================================================= */
 .plans { padding: 112px 0 104px; }
-.plans--stay { background: var(--gray-dark); }
+.plans--stay { background: var(--gray-dark) url("../img/bg-stayplan.jpg") center / cover no-repeat; }
+.webp .plans--stay { background-image: url("../img/bg-stayplan.webp"); }
 .plans--stay .plans__title { color: #fff; }
-.plans--day { background: var(--gray-light); }
+.plans--day { background: #e6e9e3 url("../img/bg-dayuse.jpg") center / cover no-repeat; }
+.webp .plans--day { background-image: url("../img/bg-dayuse.webp"); }
 .plans__title { font-size: 60px; font-weight: 700; line-height: 1.2; text-align: center; letter-spacing: .12em; text-indent: .12em; }
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 30px; }
 .card { display: flex; flex-direction: column; background: #fff; }
@@ -414,8 +427,7 @@ button, input, select { font: inherit; color: inherit; }
   .booking__best { margin-right: 0; text-align: center; }
   .booking__links { margin-left: 0; width: 100%; justify-content: center; }
   .weather__list { gap: 16px; }
-  .concept__copy { left: auto; right: 6%; }
-  .concept__text { left: auto; right: 6%; width: 540px; }
+  .concept__body { right: 6%; }
   .zigzag__body { padding: 48px 32px 0 48px; }
   .zigzag__head { font-size: 56px; }
   .zigzag__catch { margin-top: 48px; font-size: 30px; }
@@ -430,15 +442,17 @@ button, input, select { font: inherit; color: inherit; }
   .access__map { width: 50%; }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1199px) {
   /* ヘッダー：ハンバーガー */
   .site-header__inner { height: 72px; }
   .logo { top: 8px; gap: 7px; }
   .logo__mark { width: 42px; height: 42px; margin-bottom: 5px; }
   .logo__sub { font-size: 13px; }
   .logo__type { width: 128px; }
-  .header-actions { top: 18px; right: 76px; gap: 10px; }
-  .btn-head { width: 96px; height: 36px; font-size: 14px; }
+  .header-actions { top: 18px; right: 70px; gap: 16px; }
+  .btn-plan { width: auto; height: 36px; padding: 0 14px; font-size: 15px; }
+  .lang-btn { font-size: 14px; gap: 6px; }
+  .lang-btn__icon { width: 20px; height: 20px; }
   .menu-toggle {
     display: flex; flex-direction: column; justify-content: center; gap: 7px;
     position: absolute; right: 14px; top: 14px; width: 44px; height: 44px; padding: 0 9px;
@@ -460,6 +474,9 @@ button, input, select { font: inherit; color: inherit; }
   .gnav a { display: block; padding: 14px 4px; font-size: 16px; }
   .gnav a::after { display: none; }
 
+}
+
+@media (max-width: 1023px) {
   .hero { height: 70vh; min-height: 460px; max-height: 720px; }
   .hero__copy { top: 12%; font-size: 30px; transform: translateX(-15px); }
 
@@ -503,8 +520,10 @@ button, input, select { font: inherit; color: inherit; }
   body { line-height: 1.8; }
   .btn { min-width: 240px; height: 52px; font-size: 15px; }
 
-  .header-actions .btn-head--light { display: none; }
-  .header-actions { right: 66px; }
+  .lang-btn__label, .lang-btn__arrow { display: none; }
+  .header-actions { right: 62px; gap: 12px; }
+  .btn-plan { display: none; }
+  .gnav .gnav__plan { display: block; }
 
   .hero { height: 78vh; min-height: 480px; }
   .hero__copy { font-size: 26px; letter-spacing: 5px; transform: translateX(-13px); top: 9%; }
@@ -527,8 +546,10 @@ button, input, select { font: inherit; color: inherit; }
   .concept::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,.45) 62%, rgba(0,0,0,.5) 100%); }
   .concept__inner { z-index: 1; }
   .concept__inner { position: relative; display: flex; flex-direction: column; align-items: center; }
-  .concept__copy { position: static; font-size: 34px; line-height: 54px; letter-spacing: 6px; }
-  .concept__text { position: static; width: auto; margin-top: 48px; font-size: 15px; line-height: 28px; letter-spacing: .04em; }
+  .concept__body { position: static; flex-direction: column; align-items: center; gap: 40px; }
+  .concept__copy { font-size: 34px; line-height: 54px; letter-spacing: 6px; }
+  .concept__text { writing-mode: horizontal-tb; margin-top: 0; font-size: 15px; line-height: 28px; letter-spacing: .04em; }
+  .concept__text p + p { margin-block-start: 28px; }
   .concept__text br { display: none; }
 
   .visit { padding: 72px 0; background-size: auto 100%; background-position: 70% top; }

@@ -45,9 +45,13 @@
       </span>
     </a>
     <div class="header-actions">
-      <a class="btn-head btn-head--dark" href="#booking">空室検索</a>
       <!-- 翻訳：shutto翻訳の言語切替に差し替え -->
-      <button class="btn-head btn-head--light" type="button">日本語</button>
+      <button class="lang-btn" type="button" aria-haspopup="true">
+        <svg class="lang-btn__icon" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><ellipse cx="12" cy="12" rx="4.3" ry="10"/><path d="M2 12h20M3.6 6.5h16.8M3.6 17.5h16.8"/></g></svg>
+        <span class="lang-btn__label">LANGUAGE</span>
+        <span class="lang-btn__arrow" aria-hidden="true">▼</span>
+      </button>
+      <a class="btn-plan" href="#">宿泊プランはこちら</a>
     </div>
     <nav class="gnav" id="gnav" aria-label="グローバルナビゲーション">
       <ul>
@@ -57,6 +61,7 @@
         <li><a href="/onsen/">温泉</a></li>
         <li><a href="/rooms/">客室</a></li>
         <li><a href="#access">アクセス</a></li>
+        <li class="gnav__plan"><a href="#">宿泊プランはこちら</a></li>
       </ul>
     </nav>
     <button class="menu-toggle" type="button" aria-controls="gnav" aria-expanded="false" aria-label="メニュー">
@@ -146,10 +151,12 @@
 <section class="concept">
   <div class="concept__bg" aria-hidden="true"></div>
   <div class="concept__inner">
+    <div class="concept__body">
     <h2 class="concept__copy tategaki">秘境に、<br>本格旅館がある。</h2>
     <div class="concept__text">
       <p>南アルプスの麓、大井川鐵道の終着駅からほど近く。<br>夢のつり橋を渡れば、目の前にエメラルドグリーンに輝く<br>ダム湖が広がります。<br>翠紅苑は、その渓谷美のすぐそばに<br>昭和三十七年から店を構える一軒宿です。</p>
       <p>「美女づくりの湯」と呼ばれるとろりとした温泉と、<br>地産の食材を活かした和会席料理。<br>観光で疲れた一日の終わりに、何もしない<br>贅沢な時間をお過ごしください。</p>
+    </div>
     </div>
   </div>
 </section>
