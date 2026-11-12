@@ -625,3 +625,65 @@ button, input, select { font: inherit; color: inherit; }
 @media (max-width: 1599px) {
   .zigzag__text br { display: none; }
 }
+
+
+/* =========================================================
+   2026-11-12 調整：ヘッダー高さ80％・固定／天気コンパクト／ヒーロー動画
+   ========================================================= */
+html { scroll-padding-top: 80px; }
+.site-header { position: sticky; top: 0; }
+.site-header__inner { height: 80px; }
+.logo { top: 11px; gap: 7px; }
+.logo__mark { width: 45px; height: 45px; margin-bottom: 6px; }
+.logo__sub { font-size: 14.5px; margin-bottom: 0; }
+.logo__type { width: 137px; }
+.gnav { top: 29px; }
+.header-actions { top: 17px; gap: 25px; }
+.lang-btn { font-size: 14px; gap: 7px; }
+.lang-btn__icon { width: 19px; height: 19px; }
+.lang-btn__arrow { font-size: 10px; }
+.btn-plan { width: 198px; height: 46px; font-size: 18px; }
+
+.hero__video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 50%;
+}
+.hero__note {
+  position: absolute; left: 20px; bottom: 18px; z-index: 2;
+  margin: 0; padding: 6px 12px;
+  background: rgba(0,0,0,.55); color: #fff;
+  font-size: 13px; line-height: 1.5; letter-spacing: .04em;
+}
+
+.weather { padding: 22px 0 24px; }
+.weather__title { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+.weather__list { gap: 10px; }
+.weather__day {
+  height: auto; gap: 7px; padding: 14px 6px 13px;
+  border: 1px solid #ddd8cc; border-radius: 4px;
+  font-size: 13px; line-height: 1.3;
+}
+.weather__day.is-today { border-color: #2f7a57; background: #eef5f0; }
+.w-date { white-space: nowrap; font-size: 14px; font-weight: 700; color: var(--ink); letter-spacing: .02em; }
+.w-wd { margin-left: 3px; font-size: 12px; font-weight: 500; color: #8a8478; }
+.w-icon { width: 22px; height: 22px; margin: 0; }
+.w-pop { font-size: 12px; color: #5b7bc0; }
+
+@media (max-width: 1199px) {
+  html { scroll-padding-top: 60px; }
+  .site-header__inner { height: 60px; }
+  .logo { top: 5px; gap: 6px; }
+  .logo__mark { width: 34px; height: 34px; margin-bottom: 5px; }
+  .logo__sub { font-size: 11px; }
+  .logo__type { width: 104px; }
+  .header-actions { top: 12px; }
+  .btn-plan { width: auto; height: 34px; padding: 0 12px; font-size: 14px; }
+  .menu-toggle { top: 8px; }
+  .gnav { top: 60px; }
+}
+@media (max-width: 767px) {
+  .weather { padding: 18px 0 20px; }
+  .weather__list { grid-template-columns: repeat(7, minmax(88px, 1fr)); gap: 8px; }
+  .hero__note { left: 12px; bottom: 12px; font-size: 11px; padding: 5px 9px; }
+}
+.weather__list:has(.weather__error) { display: block; }

@@ -80,8 +80,13 @@
       <source srcset="assets/img/hero.webp" type="image/webp">
       <img src="assets/img/hero.jpg" alt="エメラルドグリーンの湖面に架かる夢のつり橋" width="3200" height="1358">
     </picture>
+    <!-- 仮動画（2026/10/02版）。本番動画の完成後に src を差し替え。読み込めない場合は上の写真が表示される -->
+    <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="assets/img/hero.jpg" aria-hidden="true">
+      <source src="https://silverwing.sub.jp/suikoen/movie/movie_top_20261002.mp4" type="video/mp4">
+    </video>
   </div>
   <h1 class="hero__copy tategaki">渓谷の色に、ただ浸る。</h1>
+  <p class="hero__note">※ 仮の動画です（本番用の動画は制作中）</p>
 </section>
 
 <!-- ============ 予約バー ============ -->
@@ -135,14 +140,14 @@
   <div class="container">
     <h2 class="weather__title" id="weather-title">寸又峡温泉 ／ 7日間天気予報</h2>
     <ol class="weather__list" id="weather-list">
-      <!-- JSで気象庁APIから描画。取得失敗時はこの初期表示が残る -->
-      <li class="weather__day"><span class="w-label">今日</span><span class="w-date">4/2</span><span class="w-icon" data-icon="cloud"></span><span class="w-pop">30%</span><span class="w-temp">16° / 8°</span></li>
-      <li class="weather__day"><span class="w-label">木</span><span class="w-date">4/3</span><span class="w-icon" data-icon="cloud"></span><span class="w-pop">80%</span><span class="w-temp">13° / 9°</span></li>
-      <li class="weather__day"><span class="w-label">金</span><span class="w-date">4/4</span><span class="w-icon" data-icon="rain"></span><span class="w-pop">70%</span><span class="w-temp">12° / 8°</span></li>
-      <li class="weather__day"><span class="w-label">土</span><span class="w-date">4/5</span><span class="w-icon" data-icon="suncloud"></span><span class="w-pop">40%</span><span class="w-temp">15° / 7°</span></li>
-      <li class="weather__day"><span class="w-label">日</span><span class="w-date">4/6</span><span class="w-icon" data-icon="sun"></span><span class="w-pop">10%</span><span class="w-temp">18° / 6°</span></li>
-      <li class="weather__day"><span class="w-label">月</span><span class="w-date">4/7</span><span class="w-icon" data-icon="sun"></span><span class="w-pop">10%</span><span class="w-temp">19° / 7°</span></li>
-      <li class="weather__day"><span class="w-label">火</span><span class="w-date">4/8</span><span class="w-icon" data-icon="suncloud"></span><span class="w-pop">30%</span><span class="w-temp">17° / 8°</span></li>
+      <!-- JSで気象庁APIから描画（以下は表示見本） -->
+      <li class="weather__day is-today"><span class="w-date">11/12<span class="w-wd">(今日)</span></span><span class="w-icon" data-icon="sun"></span><span class="w-pop">0%</span></li>
+      <li class="weather__day"><span class="w-date">11/13<span class="w-wd">(金)</span></span><span class="w-icon" data-icon="sun"></span><span class="w-pop">10%</span></li>
+      <li class="weather__day"><span class="w-date">11/14<span class="w-wd">(土)</span></span><span class="w-icon" data-icon="cloud"></span><span class="w-pop">30%</span></li>
+      <li class="weather__day"><span class="w-date">11/15<span class="w-wd">(日)</span></span><span class="w-icon" data-icon="cloud"></span><span class="w-pop">70%</span></li>
+      <li class="weather__day"><span class="w-date">11/16<span class="w-wd">(月)</span></span><span class="w-icon" data-icon="cloud"></span><span class="w-pop">30%</span></li>
+      <li class="weather__day"><span class="w-date">11/17<span class="w-wd">(火)</span></span><span class="w-icon" data-icon="cloud"></span><span class="w-pop">50%</span></li>
+      <li class="weather__day"><span class="w-date">11/18<span class="w-wd">(水)</span></span><span class="w-icon" data-icon="cloud"></span><span class="w-pop">50%</span></li>
     </ol>
   </div>
 </section>

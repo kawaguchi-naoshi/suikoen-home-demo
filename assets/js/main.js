@@ -19,6 +19,18 @@
     });
   }
 
+  /* ---------- ヒーロー動画（仮） ---------- */
+  var video = document.querySelector('.hero__video');
+  if (video) {
+    var src = video.querySelector('source');
+    var drop = function () { video.remove(); };
+    if (src) src.addEventListener('error', drop);
+    video.addEventListener('error', drop);
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      video.removeAttribute('autoplay'); video.pause();
+    }
+  }
+
   /* ---------- 宿泊日の初期値＝今日 ---------- */
   var checkin = document.getElementById('checkin');
   if (checkin) {
@@ -135,16 +147,12 @@
   function renderWeather(days) {
     if (!days.length) throw new Error('no data');
     list.innerHTML = days.map(function (d) {
-      var label = d.isToday ? '今日' : WD[d.date.getDay()];
+      var wd = d.isToday ? '今日' : WD[d.date.getDay()];
       var pop = d.pop !== '' && d.pop != null ? d.pop + '%' : '-';
-      var max = d.max !== '' && d.max != null ? d.max + '°' : '-';
-      var min = d.min !== '' && d.min != null ? d.min + '°' : '-';
-      return '<li class="weather__day">' +
-        '<span class="w-label">' + label + '</span>' +
-        '<span class="w-date">' + (d.date.getMonth() + 1) + '/' + d.date.getDate() + '</span>' +
+      return '<li class="weather__day' + (d.isToday ? ' is-today' : '') + '">' +
+        '<span class="w-date">' + (d.date.getMonth() + 1) + '/' + d.date.getDate() + '<span class="w-wd">(' + wd + ')</span></span>' +
         '<span class="w-icon" data-icon="' + codeToIcon(d.code) + '"></span>' +
-        '<span class="w-pop">' + pop + '</span>' +
-        '<span class="w-temp">' + max + ' / ' + min + '</span></li>';
+        '<span class="w-pop">' + pop + '</span></li>';
     }).join('');
     paintIcons(list);
   }
